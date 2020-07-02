@@ -13,9 +13,6 @@ import { ChatService } from '@services/chat/chat.service';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule
-  ],
-  providers: [
-    ChatService
   ]
 })
 export class AuthModule { }

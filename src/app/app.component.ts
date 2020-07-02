@@ -7,6 +7,5 @@ import { ChatService } from '@services/chat/chat.service';
 })
 export class AppComponent {
   constructor(private chatService: ChatService){
-    this.chatService.init();
   }
 }

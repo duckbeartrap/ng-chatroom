@@ -2,24 +2,25 @@
   <div class="ch-chatroom__header">
     <span>Chatroom</span>
     <div>
-      <button>Copy Link</button>
+      <span style="padding: 0px 10px;">{{"localhost:3000/auth/join" + room}}</span>
       <button>Destroy room</button>
     </div>
   </div>
   <div class="ch-chatroom__body">
     <div class="ch-chatroom__participants">
-      <div class="ch-chatroom__participants__item">
-        ParticipantName
+      <div class="ch-chatroom__participants__item" *ngFor="let participant of participants">
+        {{participant}}
       </div>
     </div>
     <div class="ch-chatroom__messenger">
       <div class="ch-chatroom__messenger__pool">
         <ng-container *ngFor="let message of messages">
-          <app-message [message]="message.message" [sender]="message.sender" [incoming]="message.sender == user ? false : true"></app-message>
+          <app-message [message]="message.message" [sender]="message.sender" [incoming]="message.sender == senderEmail ? false : true"></app-message>
         </ng-container>
+        <span *ngIf="typing && typing.sender != senderEmail">{{typing.sender + "is typing..."}}</span>
       </div>
       <div class="ch-chatroom__messenger__input">
-        <input type="text" [(ngModel)]="messageInput" placeholder="Enter message...">
+        <input type="text" [(ngModel)]="messageInput" (keyup)="sendTyping()" placeholder="Enter message...">
         <button (click)="sendMessage()">Send</button>
       </div>
     </div>

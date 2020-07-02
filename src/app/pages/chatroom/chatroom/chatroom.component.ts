@@ -33,6 +33,7 @@ export class ChatroomComponent implements OnInit {
     this.connection = this.chatService.getMessages().subscribe((message: IMessage) => this.messages.push(message));
     this.chatService.getParticipants().subscribe((participants: string[]) => this.participants = participants);
     this.chatService.getTyping().subscribe((typing: IMessage) => {
+      console.log(typing);
       this.typing = typing;
       setTimeout(()=>this.typing = null, 2000);
     });
@@ -44,6 +45,7 @@ export class ChatroomComponent implements OnInit {
   }
 
   sendTyping(){
+    console.log("typing")
     this.chatService.type(this.room, this.messageInput, this.senderEmail);
   }
 

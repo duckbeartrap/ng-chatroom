@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   joinRoom(){
     let roomId = this.roomUrl.split("/").pop();
     if(roomId){
-      this.router.navigate(['chatroom', roomId])
+      this.router.navigate(['auth/join', roomId])
     }
   }
 

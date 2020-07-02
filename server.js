@@ -29,7 +29,6 @@ let rooms = {};
 
 io.on('connection', (socket) => {
   socket.on('join', (room, user) => {
-    socket['user'] = user;
     if (rooms[room]) {
       rooms[room][user.email] = socket;
     } else {
@@ -50,17 +49,17 @@ io.on('connection', (socket) => {
   });
 
   socket.on('leave', (room, payload) => {
-     delete rooms[room][payload.email];
-     emitForGroup(room, Object.keys(rooms[room]), 'participantsUpdate');
+    delete rooms[room][payload.email];
+    emitForGroup(room, Object.keys(rooms[room]), 'participantsUpdate');
   })
 });
 
 function emitForGroup(room, payload, event) {
-    clientsToEmit = rooms[room];
-    console.log(clientsToEmit);
-    for( let client of Object.values(clientsToEmit) ){
-      client.emit(event, payload)
-    }
+  clientsToEmit = rooms[room];
+  for (let client of Object.values(clientsToEmit)) {
+    console.log(client.id);
+    client.emit(event, payload)
+  }
 }
 
 server.listen(port, () => console.log(`Running on localhost:${port}`));

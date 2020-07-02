@@ -7,7 +7,7 @@ import { SharedModule } from '@shared/shared.module';
 import { ChatroomRoutingModule } from './chatroom-routing.module';
 import { CreateChatroomComponent } from './create-chatroom/create-chatroom.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
-
+import { ChatService } from '@services/chat/chat.service';
 
 @NgModule({
   declarations: [CreateChatroomComponent, ChatroomComponent],
@@ -16,7 +16,7 @@ import { ChatroomComponent } from './chatroom/chatroom.component';
     ChatroomRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class ChatroomModule { }

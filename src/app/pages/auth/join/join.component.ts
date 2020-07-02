@@ -20,7 +20,9 @@ export class JoinComponent implements OnInit {
         this.chatroomName = params['chatroom'];
       }
     });
+  }
 
+  ngOnInit() {
     this.chatService.joinedRoom().subscribe( res => {
       if(res){
         localStorage.setItem('senderEmail', this.joinForm.value.email);
@@ -28,9 +30,6 @@ export class JoinComponent implements OnInit {
         this.router.navigate(["chatroom", this.chatroomName]);
       }
     });
-  }
-
-  ngOnInit() {
   }
 
   createJoinForm(){

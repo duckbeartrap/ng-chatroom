@@ -8,21 +8,17 @@ import { IMessage } from '@interfaces';
 })
 export class ChatService {
   private url = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port : '');
-  private socket;
+  private socket = io(this.url);
 
-  constructor() {
-    this.socket = io(this.url);
-  }
+  constructor() {}
 
-  public init (){
-    console.log("initializing")
-  }
 
   public getId(){
     return this.socket.id;
   }
 
   public sendMessage(room, message, sender) {
+    console.log(this.socket.id);
     let payload: IMessage = {
       sender: sender,
       message: message,
@@ -77,7 +73,6 @@ export class ChatService {
   public getTyping() {
     let observable = new Observable(observer => {
       this.socket.on('typed', (data) => {
-        data.pupu = this.socket.email;
         observer.next(data);    
       }); 
     })  ;   
