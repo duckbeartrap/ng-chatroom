@@ -1,0 +1,39 @@
+.ch {
+    &-join {
+      width: 100vw;
+      height: 100vh;
+      background: url('../../../../assets/img/bg.png');
+      background-position: center;
+      background-attachment: fixed;
+      background-size: 500px;
+      -webkit-box-shadow: inset 0px -50vh 500px -114px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: inset 0px -50vh 500px -114px rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0px -50vh 500px -114px rgba(0, 0, 0, 0.75);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      &__form {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        background: white;
+        -webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+        border-radius: 12px;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+  
+        &__item {
+          width: 100%;
+          height: auto;
+          padding: 5px;
+          display: flex;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+  

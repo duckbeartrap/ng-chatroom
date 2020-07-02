@@ -1,0 +1,27 @@
+<div class="ch-chatroom">
+  <div class="ch-chatroom__header">
+    <span>Chatroom</span>
+    <div>
+      <button>Copy Link</button>
+      <button>Destroy room</button>
+    </div>
+  </div>
+  <div class="ch-chatroom__body">
+    <div class="ch-chatroom__participants">
+      <div class="ch-chatroom__participants__item">
+        ParticipantName
+      </div>
+    </div>
+    <div class="ch-chatroom__messenger">
+      <div class="ch-chatroom__messenger__pool">
+        <ng-container *ngFor="let message of messages">
+          <app-message [message]="message.message" [sender]="message.sender" [incoming]="message.sender == user ? false : true"></app-message>
+        </ng-container>
+      </div>
+      <div class="ch-chatroom__messenger__input">
+        <input type="text" [(ngModel)]="messageInput" placeholder="Enter message...">
+        <button (click)="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

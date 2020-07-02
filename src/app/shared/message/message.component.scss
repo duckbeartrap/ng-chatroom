@@ -1,0 +1,43 @@
+.ch{
+    &-message{
+        width: auto;
+        padding: 10px;
+        background: #EEEEEE;
+        border-radius: 8px;
+        word-break: break-all;
+
+        &__incoming{
+            background: #1976D2;
+            color: white;
+        }
+        &__container{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+
+            &__incoming{
+                justify-content: flex-start;
+            }
+        }
+
+        &__box{
+            display: flex;
+            width: 100%;
+            max-width: 60%;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            &__incoming{
+                align-items: flex-start;
+            }
+        }
+
+        &__sender{
+            width: auto;
+            padding: 5px 0px;
+            color: #757575;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<div class="ch-chatroom">
+  <form [formGroup]="chatroomForm" (ngSubmit)="onSubmit()">
+    <div class="ch-chatroom__form">
+      <div class="ch-chatroom__form__item">
+        <span class="ch-form__heading">Enter room name</span>
+      </div>
+      <div class="ch-chatroom__form__item">
+        <input type="text" formControlName="name" class="ch-form__input" placeholder="Room name">
+      </div>
+      <div class="ch-chatroom__form__item" style="justify-content: flex-end">
+        <button class="ch-form__button">Create</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,7 @@
+<div class="ch-home">
+    <div class="ch-home__input__container">
+        <input [(ngModel)]="roomUrl" class="ch-home__input" type="text" placeholder="Paste room url">
+        <button class="ch-home__button ch-home__button__left" (click)="joinRoom()">Join</button>
+        <button class="ch-home__button ch-home__button__right" routerLink="chatroom/create">Create</button>
+    </div>
+</div>

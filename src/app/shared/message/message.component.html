@@ -1,0 +1,10 @@
+<div class="ch-message__container" [ngClass]="{'ch-message__container__incoming': incoming}">
+  <div class="ch-message__box" [ngClass]="{'ch-message__box__incoming': incoming}">
+    <div class="ch-message__sender">
+      {{sender}}
+    </div>
+    <div class="ch-message" [ngClass]="{'ch-message__incoming': incoming}">
+      {{message}}
+    </div>
+  </div>
+</div>
